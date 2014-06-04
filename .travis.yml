@@ -1,0 +1,12 @@
+language: ruby
+env:
+  global:
+    secure: "kDF+4UokupJ8N+5fRTygdDbQEm1R7aSEReJS2FLIwDb7kp0jZBJZRAtw8Zfs3aPPBV+vItsLcDi5Qbq6iV5yyKoHuQZDdY9ntOS7WUa2XyPwJQ3/ZcX3lif+bP4GeI7pcYGaBwgKlpgXVBslACShpaSfuqYPfpZ6QXyarvGB5KE="
+install: echo "Install phase"
+script:
+- ./vagrant.sh
+after_script:
+- ls
+- chmod a+x travis-promote.sh
+- ./travis-promote.sh
+
