@@ -1,7 +1,10 @@
 echo "Build $TRAVIS_JOB_NUMBER"
 echo "Git: $TRAVIS_COMMIT [$TRAVIS_BRANCH]"
+echo "Create gh-pages branch"
+git fetch origin
+git branch -v -a
 echo "Checkout gh-pages branch"
-git checkout gh-pages
+git checkout -b gh-pages origin/gh-pages
 echo "Remove existing documentation web site old content"
 find . | grep -v ".git\|toc.xml\|_site" | xargs rm -r
 ls
