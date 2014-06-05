@@ -1,5 +1,7 @@
 echo "Build $TRAVIS_JOB_NUMBER"
 echo "Git: $TRAVIS_COMMIT [$TRAVIS_BRANCH]"
+echo "List all available branches"
+git branch -v -a
 echo "Checkout gh-pages branch"
 git checkout gh-pages
 echo "Remove existing documentation web site old content"
