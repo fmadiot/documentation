@@ -1,10 +1,7 @@
 echo "Build $TRAVIS_JOB_NUMBER"
 echo "Git: $TRAVIS_COMMIT [$TRAVIS_BRANCH]"
-echo "Create gh-pages branch"
-git fetch origin
-git branch -v -a
 echo "Checkout gh-pages branch"
-git checkout -b gh-pages origin/gh-pages
+git checkout gh-pages
 echo "Remove existing documentation web site old content"
 find . | grep -v ".git\|toc.xml\|_site" | xargs rm -r
 ls
@@ -17,7 +14,7 @@ ls
 echo "Push new documentation web site content on gh-pages branch"
 git config user.email "melanie.bats@obeo.fr"
 git config user.name "Mélanie Bats"
-git add -A
-git commit -m "Promoting a new documentation web site for https://github.com/UML-Designer/documentation/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
-git push origin gh-pages --quiet &>/dev/null
+#git add -A
+#git commit -m "Promoting a new documentation web site for https://github.com/UML-Designer/documentation/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
+#git push origin gh-pages --quiet &>/dev/null
 echo "Site promoted."
