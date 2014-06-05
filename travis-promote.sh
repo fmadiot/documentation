@@ -32,5 +32,5 @@ git remote rm origin
 git remote add origin https://UML-Designer:$GITHUB_TOKEN@github.com/UML-Designer/documentation.git
 git add -A
 git commit -m "Promoting a new documentation web site for https://github.com/UML-Designer/documentation/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
-git push origin gh-pages
+git push origin gh-pages --quiet &>/dev/null
 echo "Site promoted."
