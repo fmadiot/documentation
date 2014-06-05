@@ -28,6 +28,8 @@ ls
 echo "Push new documentation web site content on gh-pages branch"
 git config user.email "melanie.bats@obeo.fr"
 git config user.name "Mélanie Bats"
+git remote rm origin
+git remote add origin https://UML-Designer:$GITHUB_TOKEN@github.com/UML-Designer/documentation.git
 git add -A
 git commit -m "Promoting a new documentation web site for https://github.com/UML-Designer/documentation/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
 git push origin gh-pages --quiet &>/dev/null
